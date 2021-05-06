@@ -1,0 +1,39 @@
+Algoritmo "geometria"
+
+Var
+lado1, lado2: real
+figura: caractere
+
+
+Inicio
+
+funcao exibirDados()
+       escreva("Coloque o primeiro lado: ")
+       leia(lado1)
+
+       escreva("Coloque o segundo lado: ")
+       leia(lado2)
+
+       result: real
+       result <- (lado1 + lado2)
+
+       se (result == 4) entao
+          figura <- "Quadrado \n", "Retangulo \n", "Trápezio"
+          escreva(figura)
+       senao se (result == 3) entao
+             figura <- "Triangulo"
+             escreva(figura)
+       senao se (figura == 5) entao
+             figura <- "Pentágono"
+             escreva(figura)
+       senao se (figura <- 6)
+             figura <- "Hexágono"
+             escreva(figura)
+       senao se (result == 0) entao
+             figura <- "Circulo \n", "Oval"
+             escreva(figura)
+       senao
+            escreva("Formas geometricas não encontrada!")
+       fimse
+
+Fimalgoritmo

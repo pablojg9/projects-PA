@@ -1,0 +1,83 @@
+Algoritmo "triangulo"
+
+Var
+lado1, lado2, lado3: real
+tipo: caractere
+
+
+Inicio
+escreval("Coloque o primeiro lado: ")
+leia(lado1)
+
+escreva("Coloque o segundo lado: ")
+leia(lado2)
+
+escreva("Coloque o terceiro lado: ")
+leia(lado3)
+
+
+
+funcao exibirDados()
+       escreval("Coloque o primeiro lado: ")
+       leia(lado1)
+
+       escreval("coloque o segundo lado: ")
+       leia(lado2)
+
+       escreval("Coloque o terceiro lado: ")
+       leia
+fimfuncao
+
+funcao calcularTriangulo()
+       se (lado1 == lado2 && lador2 == lado3) entao
+          enquanto (lado1 == lado2 && lador2 == lado3) faca
+                   tipo = "TRIANGULO EQUILATERO"
+                   escreval("Lado 1: ", lado1, " Lado 2: ", lado2, " Lado 3: ", lado3)
+                   escreva(tipo, "\n")
+
+                   escreva("Deseja Continuar? (Y/N)")
+                   leia(tipo)
+
+                   se (tipo == "y" ou tipo == "s") entao
+                      exibirDados()
+                   senao
+                        pare
+                   fimse
+      fimse
+
+      senao se (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) entao
+            enquanto (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) faca
+            tipo = "TRIANGULO ISÓSCELE"
+
+            escreval("Lado 1: ", lado1, " Lado 2: ", lado2, " Lado 3: ", lado3)
+            escreva(tipo, "\n")
+
+            escreva("Deseja Continuar? (Y/N)")
+            leia(tipo)
+
+            se (tipo == "y" ou tipo == "s") entao
+               exibirDados()
+            senao
+                 pare
+            fimse
+      fimse
+
+      senao
+           tipo = "TRIANGULO ESCANELO"
+           escreval("Lado 1: ", lado1, " Lado 2: ", lado2, " Lado 3: ", lado3)
+           escreva(tipo, "\n")
+
+           enquanto (lado1 <> lado2 ou lado2 <> lado3) faca
+                    escreva("Deseja continuar (Y/N)")
+                    leia(tipo)
+                    se (tipo == "y" ou tipo == "s") entao
+                       exibirDados()
+
+                    senao
+                         pare
+                    fimse
+
+escreva("Programa Finalizado!")
+fimfuncao
+
+Fimalgoritmo

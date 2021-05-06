@@ -1,0 +1,38 @@
+Algoritmo "Notas"
+
+Var
+
+n1, n2, n3, media: real
+nome: caractere
+
+Inicio
+
+funcao exibirDados()
+       escreval("Coloque o nome do aluno")
+       leia(nome)
+
+       escreval("Coloque a primeira nota: ")
+       leia(n1)
+
+       escreval("Coloque a segunda nota: ")
+       leia(n2)
+
+       escreval("Coloque a terceira nota: ")
+       leia(n3)
+
+       escreval("\n", "Nota 1: ", n1)
+       escreval("Nota 2: ", n2)
+       escreval("Nota 3: ", n3, "\n")
+
+       calcularMedia()
+
+fimfuncao
+
+funcao calcularMedia()
+       media <- (n1 + n2 + n3) / 3
+
+       escreval("O nome do aluno é ", nome)
+       escreval("Media do aluno", nome, "é ", media)
+
+fimfuncao
+Fimalgoritmo

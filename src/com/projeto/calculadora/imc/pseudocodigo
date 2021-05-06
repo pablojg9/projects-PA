@@ -1,0 +1,74 @@
+Algoritmo "imc"
+
+Var
+nome, sexo: caractere
+altura, imc, peso: real
+
+Inicio
+
+funcao calcularImc()
+       escreval("Coloque o seu nome: ")
+       leia(nome)
+
+       escreval("Coloque o seu sexo: (m/f)")
+       leia(sexo)
+
+       se (sexo == "masculino" ou sexo == "m") entao
+          escreval("Infome seu peso: ")
+          leia(peso)
+
+          escreval("Infome sua altura (Usando virgula)")
+          leia(altura)
+
+          imc <- peso / (altura * altura)
+
+          se (imc > 1 && imc < 20.7) entao
+             escreval(nome, " você está abaixo do peso")
+          senao se (imc >= 20.7 && imc < 26.4) entao
+                escreval(nome, " você está saudável")
+          senao se (imc >= 26.4 && imc < 27.8) entao
+                escreval(nome, " você está acima do peso")
+          senao se (imc >= 27.8 && imc < 32.5) entao
+                escreval(nome, " você está acima do peso ideal")
+          senao
+               escreval(nome, " você está obeso")
+          fimse
+      fimse
+
+      se(sexo == "feminino" ou sexo == "f") entao
+         escreval("Infome seu peso: ")
+         leia(peso)
+
+         escreval("Infome sua altura (Usando virgula)")
+         leia(altura)
+
+         imc <- peso / (altura * altura)
+
+         se (imc > 1 && imc < 19.1) entao
+             escreval(nome, " você está abaixo do peso")
+         senao se (imc >= 19.1 && imc < 25.8) entao
+               escreval(nome, " você está saudável")
+         senao se (imc >= 25.8 && imc < 27.3) entao
+                escreval(nome, " você está acima do peso")
+         senao se (imc >= 27.3 && imc < 31.1) entao
+                escreval(nome, " você está acima do peso ideal")
+         senao
+               escreval(nome, " você está obeso")
+         fimse
+      fimse
+fimfuncao
+
+funcao exibirDados()
+       escreval("Seu nome é: ", nome)
+       escreval("Seu sexo: ", sexo)
+       escreval("Seu peso é: ", peso)
+       escreval("Sua altura é: ", altura)
+
+       para x: inteiro ate 30 passo 1 faca
+            escreva("*")
+       fimpara
+
+       escreval("\n", "Seu calculo é: ")
+       escreval(imc)
+fimfuncao
+Fimalgoritmo
