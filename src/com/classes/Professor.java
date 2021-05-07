@@ -1,6 +1,7 @@
 package com.classes;
 
 public class Professor extends Pessoa{
+    // Main no pacote projetos
 
     private String RA;
     private String formacao;
