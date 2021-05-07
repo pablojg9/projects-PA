@@ -5,6 +5,7 @@ public class Main {
 
         IndiceMassa indiceMassa = new IndiceMassa();
 
+
         indiceMassa.calcularImc();
         indiceMassa.exibirDados();
 

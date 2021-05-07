@@ -1,6 +1,7 @@
 package com.projeto.media;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 
 public class Notas {
 
@@ -10,24 +11,19 @@ public class Notas {
     private double n3;
     private double media;
 
-    Scanner scanner = new Scanner(System.in);
-
     public void exibirDados() {
-        System.out.println("Coloque o nome do aluno: ");
-        nome = scanner.next();
+        nome = JOptionPane.showInputDialog("Coloque o nome do aluno: ");
 
-        System.out.println("Coloque a primeira Nota: ");
-        n1 = scanner.nextDouble();
 
-        System.out.println("Coloque a segunda nota: ");
-        n2 = scanner.nextDouble();
+        n1 = Double.parseDouble(JOptionPane.showInputDialog("Coloque a primeira nota: "));
 
-        System.out.println("Coloque a terceira nota: ");
-        n3 = scanner.nextDouble();
+        n2 = Double.parseDouble(JOptionPane.showInputDialog("Coloque a segunda nota: "));
 
-        System.out.println("\n"+ "Nota 1: " + n1);
-        System.out.println("Nota 2: " + n2);
-        System.out.println("Nota 3: " + n3 + "\n");
+        n3 = Double.parseDouble(JOptionPane.showInputDialog("Coloque a terceira nota: "));
+
+
+       JOptionPane.showMessageDialog(null, "Primeira nota: "+  n1 + "\n" + "Segunda nota: "
+               + n2 + "\n" + "Terceira Nota: " + n3);
 
         calcularMedia();
 
@@ -36,10 +32,7 @@ public class Notas {
     public void calcularMedia() {
         media = (n1 + n2 + n3) / 3;
 
-        System.out.println("O nome do aluno é " + nome);
-        System.out.println(String.format("A media do aluno " + nome + " é: " + "%.2f ", media));
+        JOptionPane.showMessageDialog(null, "Seu nome é: " + nome + "\n" + String.format(String.format("A media do aluno " + nome + " é: " + "%.2f ", media
+        )));
     }
-
-
-
 }

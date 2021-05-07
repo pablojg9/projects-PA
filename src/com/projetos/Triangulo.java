@@ -1,6 +1,6 @@
 package com.projetos;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Triangulo {
     private double lado1;
@@ -9,20 +9,17 @@ public class Triangulo {
     private String tipo;
 
     //Instancias
-    Scanner scanner = new Scanner(System.in);
-
     // Métodos
     public void exibirDados() {
-        // Usando o scanner para o usuario digite o primeiro lado do triangulo
-        System.out.println("Coloque o primeiro lado: ");
-        lado1 = scanner.nextDouble();
-        // Usando o scanner para o usuario digite o segundo lado do triangulo
-        System.out.println("Coloque o segundo lado: ");
-        lado2 = scanner.nextDouble();
+        // Usando o JOptionPane para o usuario digite o primeiro lado do triangulo
 
-        // Usando o scanner para o usuario digite o terceiro lado do triangulo
-        System.out.println("Coloque o terceiro lado: ");
-        lado3 = scanner.nextDouble();
+        lado1 = Double.parseDouble(JOptionPane.showInputDialog("Coloque o primeiro lado: "));
+
+        // Usando o JOptionPane para o usuario digite o segundo lado do triangulo
+        lado2 = Double.parseDouble(JOptionPane.showInputDialog("Coloque o segundo lado: "));
+
+        // Usando o JOptionPane para o usuario digite o terceiro lado do triangulo
+        lado3 = Double.parseDouble(JOptionPane.showInputDialog("Coloque o terceiro lado: "));
 
     }
 
@@ -33,50 +30,90 @@ public class Triangulo {
                 // recebendo tipo = "TRIANGULO EQUILATERO";
                 tipo = "TRIANGULO EQUILATERO";
                 // Mostrando os lados recebindo pelo o usuario
-                System.out.println("Lado 1: " + lado1 + "\nlado 2: " + lado2 + "\nlado 3: " + lado3);
-                // Mostrando o tipo de Triangulo
-                System.out.println(tipo + "\n");
 
-                System.out.println("Deseja continuar? (Y/N)");
-                tipo = scanner.next();
-                if (tipo.equalsIgnoreCase("y") || tipo.equalsIgnoreCase("s")) {
-                    exibirDados();
+                JOptionPane.showMessageDialog(null, "Lado 1: " + lado1 + "\n" + "Lado 2: "
+                        + lado2 + "\n" + "Lado 3: " + lado3 + "\n"+ "Tipo de Triangulo: " + tipo);
+                // Mostrando o tipo de Triangulo
+
+                tipo = String.valueOf(JOptionPane.showConfirmDialog(null, "Deseja continuar ?"));
+
+                int confirm = Integer.parseInt(tipo);
+
+                // 0 = OK_OPTION
+                if (confirm == 0) {
+                    while (confirm == 0) {
+                        exibirDados();
+                        calcularTriangulo();
+                        confirm++;
+                    }
+                    // 2 = CANCEL_OPTION
+                }if (confirm == 1) {
+                    saida();
+                    break;
                 } else {
+                    saida();
                     break;
                 }
             }
 
         } else if (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) {
+
             while (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) {
                 tipo = "TRIANGULO ISÓSCELE";
-                System.out.println("Lado 1: " + lado1 + "\nLado 2: " + lado2 + "\nLado 3: " + lado3);
-                System.out.println(tipo + "\n");
 
-                System.out.println("Deseja continuar? (Y/N)");
-                tipo = scanner.next();
-                if (tipo.equalsIgnoreCase("y") || tipo.equalsIgnoreCase("s")) {
-                    exibirDados();
-                } else {
-                    break;
+                JOptionPane.showMessageDialog(null, "Lado 1: " + lado1 + "\n" + "Lado 2: "
+                        + lado2 + "\n" + "Lado 3: " + lado3 + "\n"+ "Tipo de Triangulo: " + tipo);
+
+                tipo = String.valueOf(JOptionPane.showConfirmDialog(null, "Deseja continuar ?"));
+
+                int confirm = Integer.parseInt(tipo);
+
+                // 0 = OK_OPTION
+                if (confirm == 0) {
+                    while (confirm == 0) {
+                        exibirDados();
+                        calcularTriangulo();
+                        confirm++;
+                    }if (confirm == 1) {
+                        saida();
+                        break;
+                    } else {
+                        saida();
+                        break;
+                    }
                 }
-            }
-        } else {
-            tipo = "TRIANGULO ESCALENO";
-            System.out.println("Lado 1: " + lado1 + "\nLado 2: " + lado2 + "\nLado 3: " + lado3);
-            System.out.println(tipo + "\n");
+
+                    // 2 = CANCEL_OPTION
+                }
+        } else if (lado1 != lado2 || lado2 != lado3 || lado1 != lado3){
+                tipo = "TRIANGULO ESCALENO";
+                JOptionPane.showMessageDialog(null, "Lado 1: " + lado1 + "\n" + "Lado 2: "
+                    + lado2 + "\n" + "Lado 3: " + lado3 + "\n"+ "Tipo de Triangulo: " + tipo);
             while (lado1 != lado2 || lado2 != lado3) {
-                System.out.println("Deseja continuar? (Y/N)");
-                tipo = scanner.next();
-                if (tipo.equalsIgnoreCase("y") || tipo.equalsIgnoreCase("s")) {
+                tipo = String.valueOf(JOptionPane.showConfirmDialog(null, "Deseja continuar ?"));
+
+                int confirm = Integer.parseInt(tipo);
+
+                // 0 = OK_OPTION
+                if (confirm == 0) {
+                    while (confirm == 0) {
                     exibirDados();
-                } else {
-                    break;
+                    calcularTriangulo();
+                    confirm++;
+
+                    // 1 == NO_OPTION
+                } if (confirm == 1) {
+                        break;
+                    } else {
+                        saida();
+                        break;
+                    }
+
                 }
             }
         }
-
-        System.out.println("Programa finalizado!");
-
     }
-
+    public void saida() {
+        JOptionPane.showMessageDialog(null, "Programa finalizado!");
+    }
 }

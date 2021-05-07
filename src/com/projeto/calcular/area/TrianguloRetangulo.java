@@ -2,6 +2,7 @@ package com.projeto.calcular.area;
 
 import com.projeto.geometrica.FigGeometrica;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 
@@ -11,19 +12,16 @@ import java.util.Scanner;
 public class TrianguloRetangulo extends FigGeometrica {
 
     private double area;
-    Scanner scanner = new Scanner(System.in);
-
 
     public double calcularArea() {
-        System.out.println("Coloque a base: ");
-        lado1 = scanner.nextDouble();
 
-        System.out.println("Coloque a altura: ");
-        lado2 = scanner.nextDouble();
+        lado1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Coloque a base: "));
+
+        lado2 = Double.parseDouble(JOptionPane.showInputDialog(null, "Coloque a altura"));
 
         area = (lado1 * lado2) / 2;
 
-        System.out.println("O resultado da area é: " + area);
+        JOptionPane.showMessageDialog(null, "O resultado da area é: " + area);
 
         return area;
     }
