@@ -6,78 +6,102 @@ tipo: caractere
 
 
 Inicio
-escreval("Coloque o primeiro lado: ")
-leia(lado1)
-
-escreva("Coloque o segundo lado: ")
-leia(lado2)
-
-escreva("Coloque o terceiro lado: ")
-leia(lado3)
-
-
 
 funcao exibirDados()
        escreval("Coloque o primeiro lado: ")
        leia(lado1)
 
-       escreval("coloque o segundo lado: ")
+       escreva("Coloque o segundo lado: ")
        leia(lado2)
 
-       escreval("Coloque o terceiro lado: ")
-       leia
+       escreva("Coloque o terceiro lado: ")
+       leia(lado3)
+
 fimfuncao
 
 funcao calcularTriangulo()
        se (lado1 == lado2 && lador2 == lado3) entao
-          enquanto (lado1 == lado2 && lador2 == lado3) faca
-                   tipo = "TRIANGULO EQUILATERO"
-                   escreval("Lado 1: ", lado1, " Lado 2: ", lado2, " Lado 3: ", lado3)
-                   escreva(tipo, "\n")
+          enquanto(lado1 == lado2 && lador2 == lado3) faca
+                         tipo <- "Triangulo Equilatero"
+                        escreval("Lado 1: ", lado1,"\n", " Lado 2: ",
+                                       lado2,"\n" " Lado 3: ", lado3)
+                        escreva("Deseja continuar?")
+                        leia(tipo)
 
-                   escreva("Deseja Continuar? (Y/N)")
-                   leia(tipo)
+                        confirm: inteiro = (tipo)
 
-                   se (tipo == "y" ou tipo == "s") entao
-                      exibirDados()
-                   senao
-                        pare
-                   fimse
-      fimse
 
-      senao se (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) entao
-            enquanto (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) faca
-            tipo = "TRIANGULO ISÓSCELE"
+                        se (confirm == 0) entao
+                           enquanto (confirm == 0) faca
+                                    exibirDados()
+                                    calcularTriangulo()
+                                    confirm++
+                           fimenquanto
+                        fimse
+                        se (confirm == 1) entao
+                           saida()
+                           pare
+                        senao
+                             saida()
+                             pare
+                        fimse
+          fimenquanto
 
-            escreval("Lado 1: ", lado1, " Lado 2: ", lado2, " Lado 3: ", lado3)
-            escreva(tipo, "\n")
+          senao se (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) entao
+                enquanto(lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) faca
+                               tipo <- "Triangulo Isóscele"
+                               escreval("Lado 1: ", lado1,"\n", " Lado 2: ",
+                                       lado2,"\n" " Lado 3: ", lado3)
+                               escreva("Deseja continuar?")
+                               leia(tipo)
 
-            escreva("Deseja Continuar? (Y/N)")
-            leia(tipo)
+                               confirm: inteiro = (tipo)
 
-            se (tipo == "y" ou tipo == "s") entao
-               exibirDados()
-            senao
-                 pare
-            fimse
-      fimse
+                               se (confirm == 0) entao
+                                  enquanto (confirm == 0) faca
+                                           exibirDados()
+                                           calcularTriangulo()
+                                           confirm++
+                                  fimenquanto
+                               fimse
+                               se (confirm == 1) entao
+                                  saida()
+                                  pare
+                               senao
+                                    saida()
+                                    pare
+                               fimse
+                fimenquanto
 
-      senao
-           tipo = "TRIANGULO ESCANELO"
-           escreval("Lado 1: ", lado1, " Lado 2: ", lado2, " Lado 3: ", lado3)
-           escreva(tipo, "\n")
+          senao se (lado1 <> lado2 ou lado2 <> lado3 ou lado1 <> lado3) entao
+                tipo <- "Triangulo Escaleno"
+                escreval("Lado 1: ", lado1,"\n", " Lado 2: ",
+                               lado2,"\n" " Lado 3: ", lado3)
+                enquanto (lado1 <> lado2 ou lado2 <> lado3 ou lado1 <> lado3) faca
+                         escreva("Deseja continuar?")
+                         leia(tipo)
 
-           enquanto (lado1 <> lado2 ou lado2 <> lado3) faca
-                    escreva("Deseja continuar (Y/N)")
-                    leia(tipo)
-                    se (tipo == "y" ou tipo == "s") entao
-                       exibirDados()
+                         confirm: inteiro = (tipo)
 
-                    senao
-                         pare
-                    fimse
-
-escreva("Programa Finalizado!")
+                         se (confirm == 0) entao
+                            enquanto (confirm == 0) faca
+                                     exibirDados()
+                                     calcularTriangulo()
+                                     confirm++
+                            fimenquanto
+                         fimse
+                         se (confirm == 1) entao
+                            pare
+                         senao
+                              saida()
+                              pare
+                         fimse
+                fimenquanto
+          fimenquanto
+       fimse
 fimfuncao
 
+funcao saida()
+       escreva("Programa Finalizado")
+fimfuncao
 Fimalgoritmo
