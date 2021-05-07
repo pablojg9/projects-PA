@@ -46,10 +46,12 @@ public class Triangulo {
                         calcularTriangulo();
                         confirm++;
                     }
-                    // 2 = CANCEL_OPTION
+
                 }if (confirm == 1) {
                     saida();
                     break;
+
+                    // 2 = CANCEL_OPTION
                 } else {
                     saida();
                     break;
@@ -74,6 +76,7 @@ public class Triangulo {
                         exibirDados();
                         calcularTriangulo();
                         confirm++;
+                        // 1 = NO_OPTION
                     }if (confirm == 1) {
                         saida();
                         break;
@@ -82,9 +85,7 @@ public class Triangulo {
                         break;
                     }
                 }
-
-                    // 2 = CANCEL_OPTION
-                }
+            }
         } else if (lado1 != lado2 || lado2 != lado3 || lado1 != lado3){
                 tipo = "TRIANGULO ESCALENO";
                 JOptionPane.showMessageDialog(null, "Lado 1: " + lado1 + "\n" + "Lado 2: "
@@ -108,7 +109,6 @@ public class Triangulo {
                         saida();
                         break;
                     }
-
                 }
             }
         }
