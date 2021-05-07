@@ -79,7 +79,7 @@ public class Triangulo {
                         // 1 = NO_OPTION
                     }if (confirm == 1) {
                         saida();
-                        break;
+                         break;
                     } else {
                         saida();
                         break;
