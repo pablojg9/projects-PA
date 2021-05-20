@@ -41,11 +41,11 @@ public class Triangulo {
 
                 // 0 = OK_OPTION
                 if (confirm == 0) {
-                    while (confirm == 0) {
+
                         exibirDados();
                         calcularTriangulo();
-                        confirm++;
-                    }
+
+
 
                 }if (confirm == 1) {
                     saida();
@@ -53,12 +53,13 @@ public class Triangulo {
 
                     // 2 = CANCEL_OPTION
                 } else {
-                    saida();
                     break;
                 }
             }
 
         } else if (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) {
+
+            int confirm = 0;
 
             while (lado1 == lado2 || lado2 == lado3 && lado1 != lado2 || lado1 == lado3) {
                 tipo = "TRIANGULO ISÓSCELE";
@@ -68,22 +69,19 @@ public class Triangulo {
 
                 tipo = String.valueOf(JOptionPane.showConfirmDialog(null, "Deseja continuar ?"));
 
-                int confirm = Integer.parseInt(tipo);
+                confirm = Integer.parseInt(tipo);
 
                 // 0 = OK_OPTION
-                if (confirm == 0) {
-                    while (confirm == 0) {
-                        exibirDados();
-                        calcularTriangulo();
-                        confirm++;
-                        // 1 = NO_OPTION
-                    }if (confirm == 1) {
-                        saida();
-                         break;
-                    } else {
-                        saida();
-                        break;
-                    }
+               if (confirm == 0) {
+                   exibirDados();
+                   calcularTriangulo();
+               }
+
+                if (confirm == 1) {
+                    saida();
+                    break;
+                } else {
+                    break;
                 }
             }
         } else if (lado1 != lado2 || lado2 != lado3 || lado1 != lado3){
@@ -97,22 +95,20 @@ public class Triangulo {
 
                 // 0 = OK_OPTION
                 if (confirm == 0) {
-                    while (confirm == 0) {
                     exibirDados();
                     calcularTriangulo();
-                    confirm++;
-
-                    // 1 == NO_OPTION
-                } if (confirm == 1) {
-                        break;
-                    } else {
-                        saida();
-                        break;
-                    }
+                }
+                // 1 == NO_OPTION
+                if (confirm == 1) {
+                    saida();
+                    break;
+                } else {
+                    break;
                 }
             }
         }
     }
+
     public void saida() {
         JOptionPane.showMessageDialog(null, "Programa finalizado!");
     }
