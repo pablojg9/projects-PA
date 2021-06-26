@@ -1,7 +1,7 @@
 package com.classes;
 
 public class Pessoa {
-    // Main no pacote projetos
+    // NomeNota no pacote projetos
 
     protected String nome;
     protected String sobrenome;

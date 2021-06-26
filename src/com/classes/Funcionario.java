@@ -2,7 +2,7 @@ package com.classes;
 
 public class Funcionario extends Pessoa{
 
-    // Main no pacote "projetos"
+    // NomeNota no pacote "projetos"
 
     private String funcao;
     private double salario;
