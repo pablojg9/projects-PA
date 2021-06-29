@@ -25,13 +25,6 @@ public class NomeNota {
                 nota[counter][poscoluna] = scanner.nextFloat();
             }
 
-            for (int counterDuo = 0; counterDuo < nota[1].length; counterDuo++) {
-                resultado +=  nota[counter][counterDuo];
-                resultadoDuo = resultadoDuo/4;
-
-                System.out.println(resultadoDuo);
-
-            }
         }
 
         System.out.println("=============================================");
@@ -54,6 +47,8 @@ public class NomeNota {
         }
 
         System.out.println("A média das notas é: \n");
+
+
         for (int counterTree = 0; counterTree < 5;counterTree++){
             for(int counterMatriz = 0; counterMatriz < nota[1].length; counterMatriz++) {
                 resultado = (resultado + nota[counterTree][counterMatriz]);
@@ -61,7 +56,7 @@ public class NomeNota {
                 resultadoDuo = resultado /4;
             }
 
-            System.out.println(resultadoDuo);
+            System.out.println("Media do aluno: "+ nome[counterTree]+ ": " + resultadoDuo);
         }
 
     }
